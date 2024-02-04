@@ -1,0 +1,29 @@
+INSERT INTO opiskelija (etunimi, sukunimi, osoite, luokkatunnus) 
+VALUES ("Aku", "Ankka", "Ankkalina 313", "TTE3SNH"),
+("Roope", "Ankka", "Ankkalinna 314", "TTE3SNH"),
+("Iines", "Ankka", "Ankkalinna 315", "TTE3SNL"),
+("Mikki", "Hiiri", "Ankkalinna 316", "TTE3SNO"),
+("Hessu", "Hopo", "Ankkalinna 317", "TTE3SNO");
+
+INSERT INTO opintojakso (koodi, nimi, laajuus, idopintojakso)
+VALUES ("T20041", "Tietokannat",3, NULL),
+("T20042", "Liike-elama tap",3, NULL),
+("T20043", "Fysiikka",3, NULL),
+("T20044", "Elektroniikka",6, NULL),
+("T20045", "Kellerinhumppa",5, NULL),
+("T20046", "Matematiikka",3, NULL),
+("T20047", "Ruotsi",3, NULL),
+("T20048", "VHDL-kieli",3, NULL);
+
+INSERT INTO arviointi (idarviointi, paivamaara, arvosana, idopiskelija, idopintojakso) VALUES
+(NULL, '2014-09-05', 1, 1, 1),
+(NULL, '2014-09-05', 1, 1, 3),
+(NULL, '2014-09-05', 0, 1, 7),
+(NULL, '2014-09-05', 4, 2, 1),
+(NULL, '2014-09-05', 2, 2, 3),
+(NULL, '2014-09-05', 4, 3, 1),
+(NULL, '2014-09-05', 3, 3, 3),
+(NULL, '2014-09-05', 5, 4, 1),
+(NULL, '2014-09-05', 4, 4, 3),
+(NULL, '2014-09-05', 5, 5, 3),
+(NULL, '2014-09-05', 1, 5, 1);
