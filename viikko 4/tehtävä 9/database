@@ -1,0 +1,24 @@
+CREATE DATABASE arviointitietokanta;
+USE arviointitietokanta;
+CREATE TABLE opiskelija (
+    idopiskelija int PRIMARY KEY AUTO_INCREMENT,
+    etunimi varchar(45),
+    sukunimi varchar(45),
+    osoite varchar(45),
+    luokkatunnus varchar(45)
+);
+CREATE TABLE opintojakso (
+    koodi varchar(45),
+    nimi varchar(45),
+    laajuus tinyint,
+    idopintojakso int PRIMARY KEY AUTO_INCREMENT
+);
+CREATE TABLE arviointi (
+    idarviointi int PRIMARY KEY AUTO_INCREMENT,
+    paivamaara date,
+    arvosana tinyint,
+    idopiskelija int,
+    idopintojakso int,
+    FOREIGN KEY (idopiskelija) REFERENCES opiskelija(idopiskelija),
+    FOREIGN KEY (idopintojakso) REFERENCES opintojakso(idopintojakso)
+);
