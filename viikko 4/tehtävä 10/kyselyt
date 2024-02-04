@@ -1,0 +1,29 @@
+1)
+SELECT etunimi, sukunimi, arvosana, nimi FROM arviointi
+JOIN opiskelija ON opiskelija.idopiskelija = arviointi.idopiskelija
+JOIN opintojakso ON opintojakso.idopintojakso = arviointi.idopintojakso
+WHERE arvosana = 0;
+
+2)
+SELECT etunimi, sukunimi, arvosana, nimi FROM arviointi
+JOIN opiskelija ON opiskelija.idopiskelija = arviointi.idopiskelija
+JOIN opintojakso ON opintojakso.idopintojakso = arviointi.idopintojakso
+WHERE arvosana > 0 AND nimi = "fysiikka";
+
+3)
+SELECT etunimi, sukunimi, nimi FROM arviointi
+JOIN opiskelija ON opiskelija.idopiskelija = arviointi.idopiskelija
+JOIN opintojakso ON opintojakso.idopintojakso = arviointi.idopintojakso
+WHERE etunimi = "Hessu";
+
+4)
+SELECT etunimi, sukunimi, AVG(arviointi.arvosana) AS keskiarvo FROM arviointi
+JOIN opiskelija ON opiskelija.idopiskelija = arviointi.idopiskelija
+JOIN opintojakso ON opintojakso.idopintojakso = arviointi.idopintojakso
+WHERE etunimi = "Aku"
+GROUP BY opiskelija.etunimi, opiskelija.sukunimi;
+
+5)
+SELECT nimi FROM opintojakso
+LEFT JOIN arviointi ON arviointi.idopintojakso = opintojakso.idopintojakso
+WHERE arviointi.idopintojakso IS NULL;
